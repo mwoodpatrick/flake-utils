@@ -12,7 +12,9 @@
           default = hello;
         };
         apps = rec {
-          hello = flake-utils.lib.mkApp { drv = self.packages.${system}.hello; };
+          hello = flake-utils.lib.mkApp { 
+            drv = self.packages.${system}.hello; };
+            description = "A simple hello world application";
           default = hello;
         };
       }

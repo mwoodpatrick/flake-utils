@@ -194,10 +194,12 @@ let
     { drv
     , name ? drv.pname or drv.name
     , exePath ? drv.passthru.exePath or "/bin/${name}"
+    , description ? ""
     }:
     {
       type = "app";
       program = "${drv}${exePath}";
+      meta.description = description;
     };
 
   # This function tries to capture a common flake pattern.
